@@ -204,25 +204,6 @@ Hints:
 
 \end{problem}
 
-\noindent\textbf{Solution}
-
-\noindent\textbf{(a)} If $Y|X = x$ has mean $x$, then we can interpret $Y$ as being some observation of $X$ plus some normally distributed noise around $x$, but independent of $X$. Thus, let $Y = X+Z$, where $Z \sim \mathcal{N}(0,\Sigma')$. Then
-$$Y \sim \mathcal{N}(\mu, \Sigma + \Sigma ')$$ by the closure under addition of means and variances of independent MVN's.
-
-\noindent As a check of our guess, if we consider $Y|X$ again, we have that 
-$$Y|X=x \sim x+Z \sim \mathcal{N}(x,\Sigma '),$$
-as desired.
-
-\bigskip
-
-\noindent\textbf{(b)} 
-\begin{align*}
-P(X,Y) &= P(X)P(Y|X)\\
-&= |2\pi \mathbf{\Sigma}|^{-1/2} \exp(-\frac{1}{2} \mathbf{x^\top \Sigma^{-1} x}) \cdot |2\pi \mathbf{\Sigma'}|^{-1/2} \exp(-\frac{1}{2} \mathbf{(y-x)^\top \Sigma'^{-1} (y-x)})\\
-&= (2\pi)^{-1} |\mathbf{\Sigma} \mathbf{\Sigma'}|^{-1/2} \exp( -\frac{1}{2}( \mathbf{x^\top \Sigma^{-1} x} +  \mathbf{(y-x)^\top \Sigma'^{-1} (y-x)}))\\
-&= \text{ more algebra that I can't get through before my time's up...}
-\end{align*}
-
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% PROBLEM 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -251,33 +232,10 @@ P(X,Y) &= P(X)P(Y|X)\\
 
 \noindent\textbf{(a)} Let $v$ be an eigenvector of $\mathbf{XX^\top}$, with eigenvalue $\lambda \neq 0$. Then
 \begin{align*}
-\mathbf{XX^\top v} &= \lambda\mathbf{v}\\
-\implies \mathbf{X^\top} (\mathbf{XX^\top v}) &= \mathbf{X^\top}(\lambda\mathbf{v})\\
-\implies (\mathbf{X^\top} \mathbf{X})(\mathbf{X^\top v}) &= \lambda(\mathbf{X^\top}\mathbf{v}),\\
+\mathbf{XX^\top} &= \lambda\mathbf{v}\\
+\implies
 \end{align*}
-and so $\mathbf{X^\top v}$ is an eigenvector of $X^\top X$ with eigenvalue $\lambda$.
 
-\noindent Thus, $\mathbf{XX^\top}$ and $\mathbf{X^\top X}$ have the same nonzero eigenvalues.
-
-\bigskip
-
-\noindent\textbf{(b)} Let $\mathbf{v} \neq \mathbf{w}$ be eigenvectors of $X$, corresponding to nonzero eigenvalues $\lambda_1 \neq \lambda_2$, respectively. Then
-\begin{align*}
- \lambda_1\mathbf{v} &= \mathbf{Xv} \\
-\implies  \mathbf{w}^\top \lambda_1\mathbf{v} &= \mathbf{w^\top X v} \\
-\implies \lambda_1 \mathbf{w^\top v} &= (\mathbf{X^\top w})^\top \mathbf{v}\\
-&= (\mathbf{Xw})^\top \mathbf{v} \qquad \text{since $\mathbf{X}$ is symmetric}\\
-&= (\lambda_2\mathbf{w})^\top \mathbf{v}\\
-&= \lambda_2\mathbf{w}^\top \mathbf{v}\\
-\implies (\lambda_1 - \lambda_2)\mathbf{w^\top v} &= 0
-\end{align*}
-But now since we said that $\lambda_1 \neq \lambda_2$, it must be that $\mathbf{w^\top v} = 0$, and thus $\mathbf{w, v}$ are orthogonal.
-
-\noindent Thus, if the eigenvalues of a set of eigenvectors of $\mathbf{X}$ are distinct, then those eigenvectors are mutually orthogonal.
-
-\bigskip
-
-\noindent\textbf{(c)} If $\lambda$ is an eigenvalue of $\mathbf{X}$, then $\frac{1}{\lambda}$ is an eigenvalue of $\mathbf{X}^{-1}$. That is, the eigenvalues of $\mathbf{X}^{-1}$ are the inverses of the eigenvalues of $\mathbf{X}$.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
